@@ -1,0 +1,44 @@
+name: Deploy React App to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Change this to your default branch if it’s different
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'  # Or any version you prefer
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Build the app
+      - name: Build the app
+        run: npm run build
+
+      # Step 5: Configure Git user
+      - name: Set Git user info
+        run: |
+          git config --global user.name "ajax2k21"
+          git config --global user.email "ajax2k21@gmail.com"
+            
+      # Step 7: Set up remote URL with GitHub token for authentication
+      - name: Set Git remote URL with token
+        run: git remote set-url origin https://ajax2k21:${{ secrets.GITHUB_TOKEN }}@github.com/ajax2k21/portfolio.git
+
+      # Step 5: Deploy to GitHub Pages using gh-pages
+      - name: Deploy to GitHub Pages
+        run: npm run deploy
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
