@@ -14,15 +14,42 @@ const Contact = () => {
     message: '',
   });
   const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
     setForm({ ...form, [name]: value });
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors({
+        ...errors,
+        [name]: ''
+      });
+    }
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!form.name.trim()) {
+      newErrors.name = 'Name is required';
+    }
+    if (!form.email.trim()) {
+      newErrors.email = 'Email is required';
+    }
+    if (!form.message.trim()) {
+      newErrors.message = 'Message is required';
+    }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+
     setLoading(true);
 
     // sign up on emailjs.com (select the gmail service and connect your account).
@@ -81,11 +108,14 @@ const Contact = () => {
               value={form.name}
               onChange={handleChange}
               placeholder="What's your name?"
-              className="bg-eerieBlack py-4 px-6
+              className={`bg-eerieBlack py-4 px-6
               placeholder:text-taupe
               text-timberWolf rounded-lg outline-none
-              border-none font-medium"
+              border-none font-medium ${errors.name ? 'border-2 border-red-500' : ''}`}
             />
+            {errors.name && (
+              <span className="text-red-500 text-sm mt-1">{errors.name}</span>
+            )}
           </label>
           <label className="flex flex-col">
             <span className="text-timberWolf font-medium mb-4">Your Email</span>
@@ -95,11 +125,14 @@ const Contact = () => {
               value={form.email}
               onChange={handleChange}
               placeholder="What's your email?"
-              className="bg-eerieBlack py-4 px-6
+              className={`bg-eerieBlack py-4 px-6
               placeholder:text-taupe
               text-timberWolf rounded-lg outline-none
-              border-none font-medium"
+              border-none font-medium ${errors.email ? 'border-2 border-red-500' : ''}`}
             />
+            {errors.email && (
+              <span className="text-red-500 text-sm mt-1">{errors.email}</span>
+            )}
           </label>
           <label className="flex flex-col">
             <span className="text-timberWolf font-medium mb-4">
@@ -111,11 +144,14 @@ const Contact = () => {
               value={form.message}
               onChange={handleChange}
               placeholder="What's your message?"
-              className="bg-eerieBlack py-4 px-6
+              className={`bg-eerieBlack py-4 px-6
               placeholder:text-taupe
               text-timberWolf rounded-lg outline-none
-              border-none font-medium resize-none"
+              border-none font-medium resize-none ${errors.message ? 'border-2 border-red-500' : ''}`}
             />
+            {errors.message && (
+              <span className="text-red-500 text-sm mt-1">{errors.message}</span>
+            )}
           </label>
 
           <button
