@@ -44,12 +44,12 @@ const Navbar = () => {
             className="w-9 h-9 xs:w-11 xs:h-11 sm:w-12 sm:h-12 object-contain 
             transition-transform duration-300 group-hover:rotate-12"
           />
-          <img
+          {/* <img
             src={logotext}
             alt="logo text"
             className="w-20 h-20 xs:w-24 xs:h-24 sm:w-28 sm:h-28 -ml-3 
             transition-opacity duration-300 group-hover:opacity-80"
-          />
+          /> */}
         </Link>
 
         {/* Desktop Navigation */}

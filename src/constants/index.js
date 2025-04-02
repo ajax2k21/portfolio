@@ -173,7 +173,7 @@ const projects = [
       },
     ],
     image: komikult,
-    repo: 'https://github.com/shaqdeff/KomiKult',
+    repo: 'https://github.com/ajax2k21',
     demo: 'https://shaqdeff.github.io/KomiKult/',
   },
   {

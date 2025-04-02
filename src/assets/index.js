@@ -6,7 +6,7 @@ import worldmap from './backgrounds/world-map.png';
 import logo from './logo/logo-black.png';
 import logotext from './logo/logo-text-black.png';
 
-import sonu from './personal/profile.jpeg';
+import sonu from './personal/profile-nobg.png';
 
 import backend from './icons/backend.png';
 import ux from './icons/ux.png';
