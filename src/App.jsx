@@ -10,7 +10,6 @@ import {
   Projects,
 } from './components';
 
-// Update the App component structure
 const App = () => {
   return (
     <BrowserRouter>
@@ -24,16 +23,15 @@ const App = () => {
           <About />
         </div>
 
+        <div className="bg-blog bg-cover bg-center bg-no-repeat py-20">
+           <Blogs />
+         </div>
+
         <div className="bg-tech bg-cover bg-center bg-no-repeat pb-10">
           <Tech />
         </div>
 
         <Projects />
-
-        {/* Add Blogs Section */}
-        <div id="blogs" className="bg-blog bg-cover bg-center bg-no-repeat py-20">
-          <Blogs />
-        </div>
 
         <div
           className="bg-experience bg-cover bg-center bg-no-repeat 
@@ -44,7 +42,6 @@ const App = () => {
             <Experience />
           </div>
         </div>
-
         <div className="relative z-0">
           <Contact />
         </div>

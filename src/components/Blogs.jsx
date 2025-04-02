@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
 import { styles } from '../styles';
 import { SectionWrapper } from '../hoc';
-import { slideIn } from '../utils/motion';
+import { fadeIn } from '../utils/motion'; // Changed to fadeIn
 
 const BlogCard = ({ index, title, date, excerpt, comments, link }) => (
   <motion.div
-    variants={slideIn((index % 2 === 0) ? 'left' : 'right', 'spring', index * 0.2, 0.75)}
+    variants={fadeIn('up', 'spring', index * 0.2, 0.75)}
     className="w-full bg-jet p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
     <div className="mt-2">
       <h3 className="text-timberWolf font-bold text-[22px] font-mova uppercase">
@@ -29,10 +29,10 @@ const BlogCard = ({ index, title, date, excerpt, comments, link }) => (
         target="_blank"
         rel="noopener noreferrer"
         className="text-french font-poppins font-medium flex items-center
-        hover:text-battleGray transition-colors duration-200">
+        hover:text-battleGray transition-colors duration-200 group">
         Read Full Article
         <svg
-          className="w-4 h-4 ml-2"
+          className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24">
@@ -40,7 +40,7 @@ const BlogCard = ({ index, title, date, excerpt, comments, link }) => (
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={2}
-            d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            d="M14 5l7 7m0 0l-7 7m7-7H3" />
         </svg>
       </a>
     </div>
@@ -101,12 +101,13 @@ const Blogs = () => {
   ];
 
   return (
-    <div className="-mt-20">
+    <div className="-mt-20" id="blogs">
       <div className={`${styles.paddingX} max-w-7xl mx-auto py-16`}>
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
           className="mb-16">
           <p className={styles.sectionSubText}>Technical Insights</p>
           <h2 className={styles.sectionHeadTextLight}>Blog Archive.</h2>
