@@ -1,6 +1,7 @@
 import { BrowserRouter } from 'react-router-dom';
 import {
   About,
+  Blogs,
   Contact,
   Experience,
   Hero,
@@ -9,6 +10,7 @@ import {
   Projects,
 } from './components';
 
+// Update the App component structure
 const App = () => {
   return (
     <BrowserRouter>
@@ -28,6 +30,11 @@ const App = () => {
 
         <Projects />
 
+        {/* Add Blogs Section */}
+        <div id="blogs" className="bg-blog bg-cover bg-center bg-no-repeat py-20">
+          <Blogs />
+        </div>
+
         <div
           className="bg-experience bg-cover bg-center bg-no-repeat 
             rounded-tl-[150px] rounded-br-[150px]">
@@ -37,6 +44,7 @@ const App = () => {
             <Experience />
           </div>
         </div>
+
         <div className="relative z-0">
           <Contact />
         </div>
