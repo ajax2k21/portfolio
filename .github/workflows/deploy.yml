@@ -32,9 +32,10 @@ jobs:
         run: |
           git config --global user.name "ajax2k21"
           git config --global user.email "ajax2k21@gmail.com"
-      
-      - name: List files in the repository
-        run: ls -alh
+            
+      # Step 7: Set up remote URL with GitHub token for authentication
+      - name: Set Git remote URL with token
+        run: git remote set-url origin https://ajax2k21:${{ secrets.GITHUB_TOKEN }}@github.com/ajax2k21/portfolio.git
 
       # Step 5: Deploy to GitHub Pages using gh-pages
       - name: Deploy to GitHub Pages
