@@ -27,6 +27,12 @@ jobs:
       - name: Build the app
         run: npm run build
 
+      # Step 5: Configure Git user
+      - name: Set Git user info
+        run: |
+          git config --global user.name "ajax2k21"
+          git config --global user.email "ajax2k21@gmail.com"
+
       # Step 5: Deploy to GitHub Pages using gh-pages
       - name: Deploy to GitHub Pages
         run: npm run deploy
