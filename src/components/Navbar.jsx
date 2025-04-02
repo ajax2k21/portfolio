@@ -72,6 +72,11 @@ const Navbar = () => {
                 transition-all duration-300 group-hover:w-full"></div>
             </li>
           ))}
+          <li>
+            <a href="https://prashantjoshi2k.blogspot.com/" target="_blank" rel="noopener noreferrer" className="text-lg lg:text-xl font-medium font-poppins uppercase tracking-wider text-eerieBlack hover:text-taupe transition-colors duration-300">
+              Blogs
+            </a>
+          </li>
         </ul>
 
         {/* Mobile Navigation */}
@@ -112,6 +117,11 @@ const Navbar = () => {
                     </a>
                   </li>
                 ))}
+                <li>
+                  <a href="https://prashantjoshi2k.blogspot.com/" target="_blank" rel="noopener noreferrer" className="text-2xl font-medium font-poppins uppercase tracking-wide py-3 block hover:pl-4 transition-all duration-300">
+                    Blogs
+                  </a>
+                </li>
               </ul>
             </div>
           </div>

@@ -85,10 +85,10 @@ const Hero = () => {
         <div>
           <img
             className="absolute bottom-0 right-0
-            w-[40vw] max-w-[300px] h-auto
+            w-[70vw] max-w-[450px] h-auto
             sm:w-[35vw] sm:max-w-[400px]"
             src={sonu}
-            alt="shaquille"
+            alt="Prashant"
           />
         </div>
       </section>
