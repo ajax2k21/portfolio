@@ -54,49 +54,49 @@ const Blogs = () => {
       date: "February 03, 2024",
       excerpt: "Understanding Bitcoin mining and its complex ecosystem. Explore the decentralized financial system without traditional banking infrastructure...",
       comments: 0,
-      link: "#" // Replace with your blog URL
+      link: "https://prashantjoshi2k.blogspot.com/2024/02/bitcoin-epic-currency-tale.html"
     },
     {
       title: "Tech Pursuit (Evading Hardware)",
       date: "March 04, 2023",
       excerpt: "Unlocking hidden potential of mobile devices and ARM architecture. Exploring mobile computing power versus traditional PC limitations...",
       comments: 0,
-      link: "#"
+      link: "https://prashantjoshi2k.blogspot.com/2023/03/tech-pursuit-evading-hardware.html"
     },
     {
       title: "Optimize Your PC Like a Pro",
       date: "October 19, 2021",
       excerpt: "Manual optimization techniques for peak system performance. Reduce CPU/RAM usage without third-party tools...",
       comments: 4,
-      link: "#"
+      link: "https://prashantjoshi2k.blogspot.com/2021/10/a-better-and-simplest-way-to-optimise.html"
     },
     {
       title: "Processor Fundamentals",
       date: "November 03, 2020",
       excerpt: "Complete guide to understanding processor architectures and choosing between Intel/AMD chips...",
       comments: 8,
-      link: "#"
+      link: "https://prashantjoshi2k.blogspot.com/2020/11/all-important-things-you-need-to-know.html"
     },
     {
       title: "Understanding Computer Viruses",
       date: "October 31, 2020",
       excerpt: "Demystifying malware, worms, and trojans. Practical examples of virus behavior and protection strategies...",
       comments: 6,
-      link: "#"
+      link: "https://prashantjoshi2k.blogspot.com/2020/10/virus-in-simplest-terms.html"
     },
     {
       title: "Android Security Deep Dive",
       date: "July 19, 2020",
       excerpt: "Mobile security comparison with desktop systems. Essential protection measures for Android devices...",
       comments: 6,
-      link: "#"
+      link: "https://prashantjoshi2k.blogspot.com/2020/07/a-word-about-android-security-and-its.html"
     },
     {
       title: "Hacking: A Personal Experience",
       date: "July 17, 2020",
       excerpt: "Real-world account of system intrusion and security recovery. Learn from actual hacking incident...",
       comments: 12,
-      link: "#"
+      link: "https://prashantjoshi2k.blogspot.com/2020/07/recently-i-was-hacked-and-my-laptop.html"
     }
   ];
 
